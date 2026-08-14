@@ -19,13 +19,8 @@ export interface TaskUpdateRequest {
     isCompleted: boolean;
 }
 
-/** Which tasks the list is currently showing. */
 export type TaskFilter = "all" | "active" | "completed";
 
-/**
- * Maps a UI filter to the backend's `isCompleted` query parameter.
- * `undefined` means "don't send the parameter at all", i.e. return everything.
- */
 export function filterToIsCompleted(filter: TaskFilter): boolean | undefined {
     switch (filter) {
         case "active":
